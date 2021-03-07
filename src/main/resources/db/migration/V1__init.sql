@@ -1,0 +1,5 @@
+CREATE TABLE hello (
+    id UUID PRIMARY KEY,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    message TEXT NOT NULL
+);

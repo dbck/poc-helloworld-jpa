@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+    heroku_postgres:
+        container_name: postgres
+        image: postgres:13.3
+        environment:
+           - POSTGRES_DB=dbname
+           - POSTGRES_USER=dbuser
+           - POSTGRES_PASSWORD=dbpassword
+        ports:
+           - "127.0.0.1:5432:5432"

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.getLanguage()}" lang="en">
+
+<head>
+  <title>poc-helloworld-jpa</title>
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <!-- Milligram CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello,</h1>
+
+    <p>this is an application with a database connection for deployment.</p>
+
+    <h2>Active environments</h2>
+    <ul th:each="profile: ${activeProfiles}">
+      <li th:text="${profile}"></li>
+    </ul>
+
+    <h2>Called page at</h2>
+    <ul th:each="hello: ${hellos}">
+      <li th:text="${#temporals.format(hello.createdAt, 'dd-MM-yyyy HH:mm:ss') + ': ' + hello.message}"></li>
+    </ul>
+  </div>
+</body>
+
+</html>
